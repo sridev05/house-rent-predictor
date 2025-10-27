@@ -13,8 +13,8 @@
       margin: 0;
       padding: 0;
       font-family: "Poppins", sans-serif;
-      background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
-      color: #e6e6e6;
+      background: #f6f8fa;
+      color: #222;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -25,16 +25,15 @@
       width: 90%;
       max-width: 950px;
       padding: 40px 50px;
-      background: rgba(255, 255, 255, 0.1);
+      background: #ffffff;
       border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0e0e0;
     }
 
     h2 {
       text-align: center;
-      color: #00d4ff;
+      color: #007bff;
       margin-bottom: 30px;
       letter-spacing: 1px;
     }
@@ -50,7 +49,7 @@
       margin-bottom: 6px;
       display: block;
       font-size: 15px;
-      color: #d2e3f0;
+      color: #333;
     }
 
     input,
@@ -59,42 +58,38 @@
       height: 45px;
       padding: 10px 12px;
       border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid #ccc;
       outline: none;
       font-size: 15px;
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
-      appearance: none;
+      background: #fff;
+      color: #333;
       transition: all 0.2s ease-in-out;
-      backdrop-filter: blur(6px);
     }
 
     input::placeholder {
-      color: #d0d0d0;
+      color: #888;
     }
 
     input:focus,
     select:focus {
-      border-color: #00d4ff;
-      background: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
     }
 
-    /* Custom dropdown styling */
     select {
-      background-image: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+      background-color: #fff;
       cursor: pointer;
     }
 
     select option {
-      background-color: #1a1f25;
-      color: #fff;
+      background-color: #fff;
+      color: #333;
       padding: 8px;
     }
 
     button {
       grid-column: span 2;
-      background: linear-gradient(90deg, #007bff, #00d4ff);
+      background: linear-gradient(90deg, #007bff, #00bfff);
       border: none;
       padding: 15px;
       border-radius: 12px;
@@ -108,21 +103,20 @@
 
     button:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+      box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
     }
 
-    /* Result Box */
     .result {
       grid-column: span 2;
       margin-top: 25px;
       padding: 15px;
-      background: rgba(0, 0, 0, 0.2);
+      background: #e8f8ee;
       border-radius: 10px;
       text-align: center;
       font-size: 18px;
       font-weight: 500;
-      color: #00ffb3;
-      box-shadow: 0 0 15px rgba(0, 255, 179, 0.2);
+      color: #007b55;
+      border: 1px solid #b4e5c4;
     }
 
     @media (max-width: 700px) {
