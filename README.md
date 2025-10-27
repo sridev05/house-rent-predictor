@@ -22,9 +22,8 @@ House Price Prediction/
 ├── model_columns.pkl # Saved feature column names
 ├── House_Rent_Dataset.csv # Dataset used for model training
 ├── templates/
-│ └── index.html # Frontend HTML form
-├── static/ # Optional CSS or JS files
-└── README.md # Documentation
+ └── index.html # Frontend HTML form
+
 
 yaml
 Copy code
