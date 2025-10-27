@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🏠 House Rent Prediction</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+      color: #e6e6e6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 950px;
+      padding: 40px 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    h2 {
+      text-align: center;
+      color: #00d4ff;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 30px;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 6px;
+      display: block;
+      font-size: 15px;
+      color: #d2e3f0;
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: 45px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      outline: none;
+      font-size: 15px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      appearance: none;
+      transition: all 0.2s ease-in-out;
+      backdrop-filter: blur(6px);
+    }
+
+    input::placeholder {
+      color: #d0d0d0;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #00d4ff;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Custom dropdown styling */
+    select {
+      background-image: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+      cursor: pointer;
+    }
+
+    select option {
+      background-color: #1a1f25;
+      color: #fff;
+      padding: 8px;
+    }
+
+    button {
+      grid-column: span 2;
+      background: linear-gradient(90deg, #007bff, #00d4ff);
+      border: none;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    }
+
+    /* Result Box */
+    .result {
+      grid-column: span 2;
+      margin-top: 25px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      color: #00ffb3;
+      box-shadow: 0 0 15px rgba(0, 255, 179, 0.2);
+    }
+
+    @media (max-width: 700px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+      .container {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🏠 House Rent Prediction</h2>
+
+    <form action="/predict" method="post">
+      <div>
+        <label for="bhk">BHK:</label>
+        <input type="number" name="bhk" placeholder="e.g. 2" required />
+      </div>
+
+      <div>
+        <label for="size">Size (sqft):</label>
+        <input type="number" name="size" placeholder="Enter size in sqft" required />
+      </div>
+
+      <div>
+        <label for="bathroom">Bathroom:</label>
+        <input type="number" name="bathroom" placeholder="Enter number of bathrooms" required />
+      </div>
+
+      <div>
+        <label for="floor">Floor:</label>
+        <input type="text" name="floor" placeholder="e.g. 2 out of 5" required />
+      </div>
+
+      <div>
+        <label for="area_type">Area Type:</label>
+        <select name="area_type" required>
+          <option value="">-- Select --</option>
+          <option value="Super Area">Super Area</option>
+          <option value="Carpet Area">Carpet Area</option>
+          <option value="Built Area">Built Area</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="city">City:</label>
+        <select name="city" required>
+          <option value="">-- Select City --</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Pune">Pune</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="area_locality">Area Locality:</label>
+        <select name="area_locality" required>
+          <option value="">-- Select Locality --</option>
+          <option value="Whitefield">Whitefield</option>
+          <option value="HSR Layout">HSR Layout</option>
+          <option value="Koramangala">Koramangala</option>
+          <option value="Indiranagar">Indiranagar</option>
+          <option value="Electronic City">Electronic City</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="furnishing_status">Furnishing Status:</label>
+        <select name="furnishing_status" required>
+          <option value="">-- Select --</option>
+          <option value="Furnished">Furnished</option>
+          <option value="Semi-Furnished">Semi-Furnished</option>
+          <option value="Unfurnished">Unfurnished</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="tenant_preferred">Tenant Preferred:</label>
+        <select name="tenant_preferred" required>
+          <option value="">-- Select --</option>
+          <option value="Family">Family</option>
+          <option value="Bachelors">Bachelors</option>
+          <option value="Company">Company</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="point_of_contact">Point of Contact:</label>
+        <select name="point_of_contact" required>
+          <option value="">-- Select --</option>
+          <option value="Owner">Owner</option>
+          <option value="Agent">Agent</option>
+          <option value="Builder">Builder</option>
+        </select>
+      </div>
+
+      <button type="submit">Predict Rent</button>
+
+      {% if prediction_text %}
+      <div class="result">
+        {{ prediction_text }}
+      </div>
+      {% endif %}
+    </form>
+  </div>
+</body>
+</html>
