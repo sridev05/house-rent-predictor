@@ -11,22 +11,6 @@ Built using **Python**, **Flask**, **Scikit-learn**, and **HTML/CSS**.
 This project trains a Random Forest Regression model on a real estate dataset to estimate house rent prices.  
 The trained model is integrated with a Flask web application that allows users to input property details and receive an instant rent prediction.
 
----
-
-## 📂 Project Structure
-
-House Price Prediction/
-│
-├── app.py # Flask backend for web app
-├── final_rent_model.pkl # Trained Random Forest model
-├── model_columns.pkl # Saved feature column names
-├── House_Rent_Dataset.csv # Dataset used for model training
-├── templates/
- └── index.html # Frontend HTML form
-
-
-yaml
-Copy code
 
 ---
 
@@ -107,7 +91,7 @@ The Flask backend:
 ## 🚀 Setup and Installation
 
 ### 1. Clone the Repository
-```bash
+
 git clone https://github.com/<your-username>/house-rent-prediction.git
 cd house-rent-prediction
 2. Create a Virtual Environment
