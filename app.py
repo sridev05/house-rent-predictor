@@ -5,9 +5,11 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Paths
-MODEL_PATH = r"D:\projects\House Price Prediction\final_rent_model.pkl"
-COLUMNS_PATH = r"D:\projects\House Price Prediction\model_columns.pkl"
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "final_rent_model.pkl")
+COLUMNS_PATH = os.path.join(BASE_DIR, "model_columns.pkl")
 
 # Load with joblib (✅ same used in training)
 model = joblib.load(MODEL_PATH)
