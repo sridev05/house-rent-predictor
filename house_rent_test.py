@@ -1,7 +1,3 @@
-# ===============================================
-# 🏠 HOUSE RENT PREDICTION TEST SCRIPT (Final)
-# ===============================================
-
 import pandas as pd
 import joblib
 
@@ -9,6 +5,8 @@ import joblib
 model = joblib.load("final_rent_model.pkl")
 model_columns = joblib.load("model_columns.pkl")
 print("✅ Model loaded successfully!")
+
+
 
 # Step 2: Create test input (you can modify these values)
 sample = pd.DataFrame({
@@ -23,6 +21,8 @@ sample = pd.DataFrame({
     "Bathroom": [2],
     "Point of Contact": ["Contact Owner"]
 })
+
+
 
 # Step 3: One-Hot Encode (same way as training)
 sample_encoded = pd.get_dummies(sample)
