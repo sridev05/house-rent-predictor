@@ -1,6 +1,4 @@
-# ==============================================
-# 🏠 HOUSE RENT PREDICTION TRAINING SCRIPT (Final)
-# ==============================================
+
 
 import pandas as pd
 import numpy as np
@@ -18,7 +16,6 @@ print("\nMissing values in dataset:")
 print(data.isnull().sum())
 
 # Step 3: Drop columns not useful for prediction
-# (Posted On usually has little predictive value)
 data = data.drop(columns=["Posted On"], errors='ignore')
 
 # Step 4: One-Hot Encode categorical columns
