@@ -11,7 +11,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "final_rent_model.pkl")
 COLUMNS_PATH = os.path.join(BASE_DIR, "model_columns.pkl")
 
-# Load with joblib (✅ same used in training)
+# Load with joblib 
+
+
 model = joblib.load(MODEL_PATH)
 model_columns = joblib.load(COLUMNS_PATH)
 
